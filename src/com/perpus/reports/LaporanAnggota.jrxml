@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4bc6181a-a0ad-4442-9a29-fe9f579053f5">
+	<property name="ireport.zoom" value="1.0000000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM anggota]]>
+	</queryString>
+	<field name="ID_Anggota" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Anggota" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Telepon" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Jenis_Kelamin" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tanggal_Bergabung" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="72" backcolor="#009999" uuid="2627e459-90b6-4dc4-99d7-b5367f927ce4"/>
+				<staticText>
+					<reportElement x="84" y="3" width="387" height="37" forecolor="#FFFFFF" uuid="4184e088-c7de-44e7-ace7-3cc510558b04"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="24" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Laporan Anggota Perpustakaan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="84" y="45" width="387" height="22" forecolor="#FFFFFF" uuid="ae7aa686-338b-4589-8554-b99e8a6f0732"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Simpus Politeknik Statistika STIS]]></text>
+				</staticText>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="0" y="8" width="84" height="54" uuid="d99349a8-7328-45a7-b2d6-5b9c0cd7c594"/>
+					<imageExpression><![CDATA["../icon/LogoAppPerpus.png"]]></imageExpression>
+				</image>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="471" y="8" width="84" height="54" uuid="25a75d42-6897-4de4-8b3f-28f57dd1e270"/>
+					<imageExpression><![CDATA["../icon/stis_100px.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="24">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="80" height="20" forecolor="#009999" backcolor="#E6E6E6" uuid="66dca66a-b11d-4f59-8593-2798812704c6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="80" y="0" width="104" height="20" forecolor="#009999" backcolor="#E6E6E6" uuid="e48be8ef-0b2a-44ba-9eaf-fa41f1a5ad2d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="184" y="0" width="140" height="20" forecolor="#009999" backcolor="#E6E6E6" uuid="a085e353-d8cd-4ec7-80aa-87899272d907"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="324" y="0" width="69" height="20" forecolor="#009999" backcolor="#E6E6E6" uuid="f5387f24-b61b-44f3-9885-c90a9df7e0ea"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telepon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="393" y="0" width="78" height="20" forecolor="#009999" backcolor="#E6E6E6" uuid="a86f7025-a4c6-45e9-8c6b-2a99c427bf87"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="471" y="0" width="84" height="20" forecolor="#009999" backcolor="#E6E6E6" uuid="aa22853e-8b87-4f52-b8b5-4a550927a1fa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal Bergabung]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="80" height="20" uuid="8b1cceca-8dde-439c-8d23-b444547283d1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID_Anggota}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="80" y="0" width="104" height="20" uuid="de76b6c6-d2c0-4e86-a232-a4de4de13a40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nama_Anggota}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="184" y="0" width="140" height="20" uuid="c60c238c-dec4-482f-ba7c-fd0459b4cddd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Email}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="324" y="0" width="69" height="20" uuid="b000383b-4ea5-49b4-a7c8-693313ec4e97"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Telepon}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="393" y="0" width="78" height="20" uuid="04ce1f52-619e-48ca-aa4d-80c07c368d50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Jenis_Kelamin}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="471" y="0" width="84" height="20" uuid="07bf1a10-ee97-45fc-81bb-cedccab96e7e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tanggal_Bergabung}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="124">
+			<staticText>
+				<reportElement x="397" y="76" width="143" height="29" uuid="5a4fc4d0-879d-402c-8d2c-cb7d759c1d43"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Kepala Unit Perpustakaan Polstat STIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="408" y="30" width="125" height="20" uuid="90854de1-0bbd-4d6b-a101-75f0ee5fb789"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Tertanda,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="452" y="10" width="81" height="20" uuid="10bb573c-7c01-476e-aa00-ff5fd91a5308"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMMM yyyy", new java.util.Locale("id", "ID")).format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="408" y="10" width="45" height="20" uuid="d9add486-d963-450b-be42-c9cc544fe597"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Jakarta, ]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="13" backcolor="#E6E6E6" uuid="5165a562-ad2b-473e-88d6-344c4c6c62c1"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Halaman " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="1" width="100" height="13" uuid="bd4a20fa-5c7a-495e-be8f-9801ffb84f4e"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMM yyyy", new java.util.Locale("id", "ID")).format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c2c8bbe8-e014-4033-baf6-03822f3660ed">
+	<property name="ireport.zoom" value="0.9090909090909111"/>
+	<property name="ireport.x" value="3"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="tanggalMulai" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tanggalAkhir" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT 
+    pmj.ID_Peminjaman, 
+    agt.ID_Anggota, 
+    agt.Nama_Anggota, 
+    bk.ID_Buku, 
+    DATE(pmj.Tanggal_Peminjaman) as Tanggal_Peminjaman, 
+    DATE(pmj.Tanggal_Pengembalian) as Tanggal_Pengembalian, 
+    DATE(png.Tanggal_Dikembalikan) as Tanggal_Dikembalikan, 
+    dpm.Status_Peminjaman, 
+    dpn.Jumlah_Denda
+FROM pengembalian png
+INNER JOIN detail_pengembalian dpn ON dpn.ID_Pengembalian = png.ID_Pengembalian
+INNER JOIN peminjaman pmj ON pmj.ID_Peminjaman = png.ID_Peminjaman
+INNER JOIN detail_peminjaman dpm ON dpm.ID_Peminjaman = pmj.ID_Peminjaman
+INNER JOIN buku bk ON bk.ID_Buku = dpn.ID_Buku
+INNER JOIN anggota agt ON agt.ID_Anggota = pmj.ID_Anggota
+GROUP BY bk.ID_Buku, pmj.ID_Peminjaman, png.ID_Pengembalian, pmj.Tanggal_Peminjaman, png.Tanggal_Dikembalikan
+ORDER BY png.ID_Pengembalian ASC]]>
+	</queryString>
+	<field name="ID_Peminjaman" class="java.lang.String"/>
+	<field name="ID_Anggota" class="java.lang.String"/>
+	<field name="Nama_Anggota" class="java.lang.String"/>
+	<field name="ID_Buku" class="java.lang.String"/>
+	<field name="Tanggal_Peminjaman" class="java.lang.String"/>
+	<field name="Tanggal_Pengembalian" class="java.lang.String"/>
+	<field name="Tanggal_Dikembalikan" class="java.lang.String"/>
+	<field name="Status_Peminjaman" class="java.lang.String"/>
+	<field name="Jumlah_Denda" class="java.lang.Double"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="72" backcolor="#009999" uuid="0e7375e8-52d1-4ac9-b505-9a77c4301cdc"/>
+				<staticText>
+					<reportElement x="84" y="3" width="632" height="38" forecolor="#FFFFFF" uuid="44cfa6d3-dbdb-4697-862c-a0ea5e48e8f2"/>
+					<textElement textAlignment="Center">
+						<font size="28" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Laporan Peminjaman Buku]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="84" y="43" width="632" height="29" forecolor="#FFFFFF" uuid="48d30101-36bd-45d0-ac69-2079f7fca935"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Politeknik Statistika STIS]]></text>
+				</staticText>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="0" y="8" width="84" height="54" uuid="de3ce795-076e-46b7-a45d-500a775c37fd"/>
+					<imageExpression><![CDATA["../icon/LogoAppPerpus.png"]]></imageExpression>
+				</image>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="717" y="8" width="84" height="54" uuid="0f070d76-19d1-4dba-942a-00ba2a61e3a7"/>
+					<imageExpression><![CDATA["../icon/stis_100px.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="91" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="262e7434-e619-49e5-9bfc-3cb2aa20ad83"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Pinjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="90" y="0" width="73" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="7be29eca-f185-415f-a51a-283e6ffe2152"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Anggota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="163" y="0" width="82" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4fd14155-b380-47ac-a62d-9659099fad1b"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="244" y="0" width="80" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="6a48311e-68ce-429b-b177-f7be6ca8c02a"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="323" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="63bfef8c-d642-4de3-a8f7-5de12b796e1a"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pinjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="414" y="0" width="91" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="0877871e-8cfc-44fa-8e79-7f1f7bb57081"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kembali]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="504" y="0" width="96" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="d2bdca12-1c86-4cf0-93ac-45ad625926f1"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dikembalikan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="599" y="0" width="117" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="76b79296-3cd4-42e9-b1c8-29efb2daf14b"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="715" y="0" width="86" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="0ab50361-158d-4c0c-b245-fc2fe7673802"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Denda]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="801" height="1" uuid="c2c56a74-a9ec-4e8f-af94-fbd97b3f0971"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="91" height="20" uuid="5d4e33f9-5e7e-4b70-9446-7a9d2eff8392"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID_Peminjaman}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="90" y="0" width="73" height="20" uuid="62c141d4-278e-455a-a655-5de6a64e61a2"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID_Anggota}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="163" y="0" width="82" height="20" uuid="3b8c60f3-328d-4c28-ae81-e8247b135ea0"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nama_Anggota}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="244" y="0" width="80" height="20" uuid="7ee05bd0-5e2d-4f4e-a992-79ad2c2caec8"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID_Buku}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="323" y="0" width="92" height="20" uuid="ada804d2-7a9e-4d60-9480-5fde8b7c0aef"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tanggal_Peminjaman}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="414" y="0" width="91" height="20" uuid="b28f38de-7a0a-4800-ac77-6aeeff363c7e"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tanggal_Pengembalian}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="504" y="0" width="96" height="20" uuid="ac0eaf29-52db-4f5e-a15c-309c67b9f8ec"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tanggal_Dikembalikan}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="599" y="0" width="117" height="20" uuid="bf4ae78a-ef5e-47c6-9cae-5aec5f3543dd"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Status_Peminjaman}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="715" y="0" width="86" height="20" uuid="31c950be-42cf-4517-bd38-b7bc25f7577e"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Jumlah_Denda} != null && $F{Jumlah_Denda} != 0) ? "Rp " + String.format("%,.2f", $F{Jumlah_Denda}).replace(".", ",") : "Rp0"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="136">
+			<staticText>
+				<reportElement x="658" y="15" width="45" height="20" uuid="0bc04aaf-4f07-4879-8d26-d6d9128092a7"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Jakarta, ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="702" y="15" width="81" height="20" uuid="c8359f10-b631-45a5-8d37-2e72c45ba4c9"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMMM yyyy", new java.util.Locale("id", "ID")).format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="658" y="35" width="125" height="20" uuid="29ea77d8-e261-466f-92b0-ea17e1a9fb14"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Tertanda,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="639" y="88" width="144" height="36" uuid="4ae59a7c-026f-47d9-8caa-882ef39c4b7f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Kepala Unit Perpustakaan Polstat STIS]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="0" y="2" width="802" height="13" backcolor="#E6E6E6" uuid="7ebdfe8b-539f-484d-ad4a-a34ea7c5232c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Halaman " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="1" y="2" width="141" height="13" uuid="0a3668be-854e-4fb9-b34c-37c447a5769b"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMM yyyy", new java.util.Locale("id", "ID")).format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
